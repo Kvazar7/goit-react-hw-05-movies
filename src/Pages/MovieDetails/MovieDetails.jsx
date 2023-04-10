@@ -9,6 +9,7 @@ const MovieDetails = () => {
   const { movieId } = useParams();
   const location = useLocation();
   const backBtn = location.state?.from ?? '/';
+  const BASE_VAY_TO_POSTAER = 'https://image.tmdb.org/t/p/w500/';
 
   useEffect(() => {
     
@@ -25,7 +26,7 @@ const MovieDetails = () => {
       <Link to={backBtn} className={css.backBtn}>Go back</Link>
       <div className={css.Movie_details_container}>
         <img
-          src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+          src={`${BASE_VAY_TO_POSTAER}${movie.poster_path}`}
           alt={movie.title}
           className={css.Banner}
         />
@@ -33,7 +34,7 @@ const MovieDetails = () => {
           <h2>
             {movie.title} ({movie.release_date})
           </h2>
-            <p>User score: {movie.vote_average * 10}%</p>
+            <p>User score: {Math.round(movie.vote_average * 10)} %</p>
           <h3>Overview</h3>
             <p>{movie.overview}</p>
           <h3>Genres</h3>
