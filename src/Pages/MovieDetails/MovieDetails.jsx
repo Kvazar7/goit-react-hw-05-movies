@@ -8,7 +8,7 @@ const MovieDetails = () => {
   const [movie, setMovie] = useState({});
   const { movieId } = useParams();
   const location = useLocation();
-  const backBtn = location.state?.from ?? '/movies';
+  const backBtn = location.state?.from ?? '/';
 
   useEffect(() => {
     
