@@ -1,29 +1,18 @@
 import { Routes, Route } from "react-router-dom";
 import { lazy } from "react";
-import SharedLayout from '../components/SharedLayout/SharedLayout';
+import {SharedLayout} from '../components/SharedLayout/SharedLayout';
 import css from './App.module.css'
 
-const Home = lazy(() => import('../Pages/Home'));
-const Movies = lazy(() => import ('../Pages/Movies'));
-const MovieDetails = lazy(() => import('../Pages/MovieDetails'));
-const Cast = lazy(() => import('../Pages/Cast'));
-const Reviews = lazy(() => import('../Pages/Reviews'));
-const NotFound = lazy(() => import ('../Pages/NotFound'));
+const Home = lazy(() => import('../Pages/Home/Home'));
+const Movies = lazy(() => import ('../Pages/Movies/Movies'));
+const MovieDetails = lazy(() => import('../Pages/MovieDetails/MovieDetails'));
+const Cast = lazy(() => import('../Pages/Cast/Cast'));
+const Reviews = lazy(() => import('../Pages/Reviews/Reviews'));
+const NotFound = lazy(() => import ('../Pages/NotFound/NotFound'));
 
 export const App = () => {
   return (
     <div className={css.Container}>
-      {/* <div className={css.Header}>
-        <nav className={css.Nav}>
-            <Link to="/"
-              className={css.Link}
-            >Home</Link>
-            <Link to="/movies"
-              className={css.Link}
-            >Movies</Link>
-        </nav>
-      </div> */}
-
       <Routes>
         <Route path="/" element={<SharedLayout />} >
             <Route index element={<Home />} />

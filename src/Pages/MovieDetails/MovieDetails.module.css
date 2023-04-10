@@ -1,0 +1,28 @@
+.backBtn {
+    margin: 5px;
+    padding: 5px 115px;
+    color: black;
+    border: solid 1px black;
+    border-radius: 5px;
+}
+
+.backBtn:hover {
+    color: white;
+    background-color: orangered;
+}
+
+.Movie_details_container {
+    display: flex;
+    gap: 30px;
+}
+
+.Banner {
+    width: 300px;
+    height: auto;
+    margin-top: 15px;
+}
+
+.Additional_information {
+    margin-top: 15px;
+    border-top: solid 2px black;
+}

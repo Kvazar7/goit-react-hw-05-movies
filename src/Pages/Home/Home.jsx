@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { getTrendingFilm } from '../services/services'
+import { getTrendingFilm } from '../../services/services'
 
 const Home = () => {
   const [filmsArray, setFilmsArray] = useState([]);
@@ -20,12 +20,12 @@ const Home = () => {
       <h1>Trending today</h1>
         <ul>
         {filmsArray.map(({ id, title }) => (
-            <Link key={id} to={`/movies/${id}`} state={{ from: location }}>
-              <li>
-                {title}
-              </li>
-            </Link>
-          ))}
+          <Link key={id} to={`/movies/${id}`} state={{ from: location }}>
+            <li>  
+              {title}
+            </li>  
+          </Link>
+        ))}
         </ul>
     </div>
   );

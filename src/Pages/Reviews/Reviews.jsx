@@ -1,37 +1,31 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { getSerchingFilmByReviews } from '../services/services'
-
+import { getSerchingFilmByReviews } from '../../services/services'
 // import css from './Reviews.module.css';
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
-  const { id } = useParams();
+  const { movieId } = useParams();
 
   useEffect(() => {
-    getSerchingFilmByReviews(id)
+    getSerchingFilmByReviews(movieId)
       .then(response => {
         return response.json();
       })
-        .then(data => {
-          console.log(data);
+      .then(data => {
+        console.log(data);
         setReviews(data.results);
       });
-  }, [id]);
-  console.log(reviews);
-
+  }, [movieId]);
+  
   return (
-    <div
-      // className={css.reviews}
-    >
+    <div>
       <h2>Reviews</h2>
-      <ul
-        // className={css.reviewsList}
-      >
+      <ul>
         {reviews.length !== 0 ? (
           reviews.map(review => (
             <li key={review.id}>
-              <p>Author: {review.author}</p>
+              <h3>Author: {review.author}</h3>
               <p>{review.content}</p>
             </li>
           ))

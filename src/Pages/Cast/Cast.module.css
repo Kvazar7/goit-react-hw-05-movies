@@ -1,0 +1,20 @@
+li {
+    list-style-type: none;
+}
+
+.castList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 5px;
+}
+
+.castList_actor {
+    margin-top: 12px;
+    max-width: 150px;
+}
+
+.castList_actor_photo {
+    width: 150px;
+    height: auto;
+}

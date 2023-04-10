@@ -1,0 +1,30 @@
+.searchbar {
+    display: flex;
+}
+
+.SearchForm {
+    margin: 5px;
+}
+
+.SearchForm_button {
+    margin: 5px;
+    padding: 5px;
+    border: solid 1px black;
+    border-radius: 5px;
+}
+
+.SearchForm_button:hover {
+    color: white;
+    background-color: orangered;
+}
+
+.SearchForm_button_text {
+    padding: 5px;
+}
+
+.SearchForm_input {
+    width: 300px;
+    padding: 5px;
+    border: solid 1px black;
+    border-radius: 5px;
+}
